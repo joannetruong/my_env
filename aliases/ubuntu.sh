@@ -1,5 +1,5 @@
-alias sbr='source ~/.bashrc'
-alias ebr='vim ~/.bashrc'
+alias sbrc='source ~/.bashrc'
+alias ebrc='nano ~/.bashrc'
 
 # apt-get
 alias sai='sudo apt-get install'
