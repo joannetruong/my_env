@@ -8,8 +8,8 @@ fi
 
 # General
 alias sba='source ~/.bash_aliases'
-alias eba='vim ~/.bash_aliases'
-alias essh='vim ~/.ssh/config'
+alias eba='nano ~/.bash_aliases'
+alias essh='nano ~/.ssh/config'
 alias rp='realpath'
 alias rmrf='rm -rf'
 alias sl='ls'  # I always misspell this, so...
