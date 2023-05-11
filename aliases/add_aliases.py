@@ -18,16 +18,18 @@ def main(args):
     assert platform in operating_systems, "Can't determine operating system!"
 
     op_sys = operating_systems[platform]
-    if args is None:
-        print("Detected operating system:", op_sys)
+    print("Detected operating system:", op_sys)
+    if args.user_input:
         correct_os = ""
-        while correct_os.lower() not in ["y", "n"]:
-            correct_os = input("Is this correct? [Y/n]: ")
-            if not correct_os:
-                correct_os = "y"
-        if correct_os == "n":
-            print("Aborting.")
-            exit()
+    else:
+        correct_os = "y"
+    while correct_os.lower() not in ["y", "n"]:
+        correct_os = input("Is this correct? [Y/n]: ")
+        if not correct_os:
+            correct_os = "y"
+    if correct_os == "n":
+        print("Aborting.")
+        exit()
 
     header = "# >>> BEGINNING OF THINGS ADDED BY my_env REPO>>>\n"
     footer = "\n# <<< END OF THINGS ADDED BY my_env REPO<<<\n"
@@ -128,11 +130,9 @@ def main(args):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) > 2:
-        parser = argparse.ArgumentParser()
-        parser.add_argument("--add-slurm", "-s", default="n")
-        parser.add_argument("--default-host", "-d", default="")
-        args = parser.parse_args()
-    else:
-        args = None
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--add-slurm", "-s", default="n")
+    parser.add_argument("--default-host", "-d", default="")
+    parser.add_argument("--user-input", action="store_true")
+    args = parser.parse_args()
     main(args)
