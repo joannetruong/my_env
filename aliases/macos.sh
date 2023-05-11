@@ -5,7 +5,8 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 export HISTCONTROL=ignoredups
 
 # Re-source the bash_profile
-alias sbr='source ~/.bash_profile'
+alias sbrc='source ~/.bash_profile'
+alias ebrc='nano ~/.bash_profile'
 
 # HEIC to JPG file converter. Example: h2j *.HEIC
 alias h2j='magick mogrify -monitor -format jpg'
